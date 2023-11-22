@@ -1,0 +1,207 @@
+/* Navbar.css */
+
+/* General styles for the navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 94%;
+    height: 7vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: auto;
+}
+
+/* Logo styles */
+.logo {
+    position: absolute;
+    display: flex;
+    margin: 45%;
+}
+
+.logo svg {
+    width: auto;
+    height: 3.5vh;
+}
+
+.logo a:hover svg .letter5 {
+    fill: rgb(9, 104, 70);
+    transition: 0.5s;
+}
+
+/* Navigation links styles */
+.links {
+    display: flex;
+    gap: 2vh;
+    float: left;
+    margin-top: -0.5vh;
+}
+
+.links a {
+    color: #003522;
+    text-decoration: none;
+    font-size: 3vh;
+}
+
+.links a :hover{
+    color: #016340;
+    transition: 0.5s;
+}
+
+/* Authentication buttons styles */
+.auth-buttons {
+    margin-left: auto;
+    margin-top: -0.5vh;
+}
+
+.auth-buttons button {
+    background: none;
+    border: none;
+    padding: 0.7vh 1vh;
+    border-radius: 10px;
+    font-family: 'Jockey One', sans-serif;
+    font-size: 3vh;
+    cursor: pointer;
+    color: #003522;
+}
+
+.auth-buttons button:hover {
+    color: #016340;
+    transition: 0.5s;
+}
+
+/* Burger menu styles */
+.burger {
+    position: relative;
+    width: 3.2vh;
+    height: 2.4vh;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+}
+
+/* Burger menu animation styles */
+.burger input {
+    display: none;
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    height: 0.45vh;
+    width: 100%;
+    background: #003522;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+}
+
+.burger input:checked~span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: -1.5px;
+}
+
+.burger input:checked~span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.burger input:checked~span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 15.5px;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    position: fixed;
+    top: 7vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, #016340, #FFFFFF);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the items vertically */
+    z-index: 1000;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.mobile-menu a {
+    color: #003522;
+    text-decoration: none;
+    font-size: 2.5vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.mobile-menu a:hover {
+    color: #016340;
+}
+
+/* Media queries */
+@media (max-width: 700px) {
+    .navbar {
+        width: 94%;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .logo {
+        position: absolute;
+        display: flex;
+        margin: 35%;
+    }
+
+    .logo svg {
+        height: 3vh;
+    }
+
+    .auth-buttons button {
+        font-size: 2.5vh;
+    }
+
+    .burger {
+        display: block;
+        margin-left: 4%;
+    }
+}
+
+@media (min-width: 700px) {
+    .burger {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+}
